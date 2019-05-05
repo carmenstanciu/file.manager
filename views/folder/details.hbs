@@ -1,0 +1,15 @@
+{{#if name}}
+<h1>Edit Folder</h1>
+{{else}}
+<h1>New Folder</h1>
+{{/if}}
+
+{{#if error}}
+<p>{{error}}</p>
+{{/if}}
+<form action="" method="POST">
+    <p>Name: <input type="text" name="name" value={{name}}></input></p>
+    <button type="submit">Create</button>
+</form>
+
+<a href="/folder/list/{{rootid}}">Cancel</a>

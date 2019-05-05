@@ -1,0 +1,11 @@
+<h3>Site Header</h3>
+
+<a href="/">Site Homepage</a><br/>
+{{#if isLoggedIn}}
+<a href="/user">Profil</a><br/>
+<a href="/folder/list">My files</a><br />
+<a href="/account/logout">Logout</a>
+{{else}}
+<a href="/account/register">Register</a><br />
+<a href="/account/login">Login</a>
+{{/if}}

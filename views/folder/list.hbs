@@ -1,0 +1,42 @@
+<h1>Lista de fisiere/foldere</h1>
+
+{{#if folderid}}
+{{#if parent}}
+<p>
+    <a href="/folder/list/{{parent._id}}">Back to {{parent.name}}</a>
+</p>
+{{else}}
+<p>
+    <a href="/folder/list">Back to root</a>
+</p>
+{{/if}}
+{{/if}}
+
+<p>
+    <a href="/folder/new/{{folderid}}">+ Folder</a>
+</p>
+<p>
+    <a href="/file/new/{{folderid}}">+ File</a>
+</p>
+
+
+
+{{#if isEmpty}}
+<h3>Nu exista foldere sau fisiere</h3>
+{{else}}
+<h3>Lista de foldere si fisiere detinute de user</h3>
+
+{{#each folders}}
+<div style="margin-bottom: 10px;"><a href="/folder/list/{{this._id}}">{{this.name}}</a><br />{{this.createdAt}}<br />
+    <a href="/folder/edit/{{this._id}}">Edit</a><br />
+    <a href="/folder/delete/{{this._id}}">Delete</a><br />
+</div>
+{{/each}}
+{{#each files}}
+<div>FISIER<br />
+<a href="{{this.url}}" target="_blank">{{this.name}}.{{this.ext}}</a>
+<br />{{this.createdAt}}</div><br />
+<a href="/file/edit/{{this._id}}">Edit</a><br />
+<a href="/file/delete/{{this._id}}">Delete</a><br />
+{{/each}}
+{{/if}}
