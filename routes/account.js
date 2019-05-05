@@ -10,10 +10,14 @@ router.get('/register', (req, res, next) => {
 router.post('/register', async (req, res, next) => {
     let email = req.body.email;
     let pass = req.body.pass;
+    let firstname = req.body.firstname;
+    let lastname = req.body.lastname;
+    let address = req.body.address;
+    let phone = req.body.phone;
 
     let error;
-    if (!email || !pass)
-        error = 'email si parola obligatorii';
+    if (!email || !pass || !firstname || !lastname || !address || !phone)
+        error = 'toate campurile sunt obligatorii';
 
     let dbUser = await User.findOne({ email: email });
     if (dbUser)
@@ -25,18 +29,17 @@ router.post('/register', async (req, res, next) => {
         });
     }
 
-    let hash = await new Promise((resolve, reject) => {
-        bcrypt.hash(pass, 12, function (err, hash) {
-            if (err)
-                return reject(err);
-
-            resolve(hash);
-        });
-    });
+    let hash = bcrypt.hashSync(pass, 12);
 
     await new User({
         email: email,
         hash: hash,
+
+        firstname: firstname,
+        lastname: lastname,
+
+        address: address,
+        phone: phone,
 
         createdAt: new Date(),
         isDisabled: false
@@ -60,14 +63,7 @@ router.post('/login', async (req, res, next) => {
     if (!dbUser)
         error = 'utilizator sau parola incorecta';
     else {
-        let passCheck = await new Promise((resolve) => {
-            bcrypt.compare(pass, dbUser.hash, (err, res) => {
-                if (res)
-                    return resolve(true);
-
-                return resolve(false);
-            });
-        });
+        let passCheck = bcrypt.compareSync(pass, dbUser.hash);
 
         if (!passCheck)
             error = 'utilizator sau parola incorecta';
