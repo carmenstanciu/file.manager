@@ -1,11 +1,14 @@
-<h3>Site Header</h3>
-
-<a href="/">Site Homepage</a><br/>
-{{#if isLoggedIn}}
-<a href="/user">Profil</a><br/>
-<a href="/folder/list">My files</a><br />
-<a href="/account/logout">Logout</a>
-{{else}}
-<a href="/account/register">Register</a><br />
-<a href="/account/login">Login</a>
-{{/if}}
+<div class="header-main">
+    <img src="/img/logo2.png" alt="logo2"><h3>Management System</h3>
+    <div class="menu">
+        <a href="/">Site Homepage</a>
+        {{#if isLoggedIn}}
+        <a href="/user">Profil</a>
+        <a href="/folder/list">My files</a>
+        <a href="/account/logout">Logout</a>
+        {{else}}
+        <a href="/account/register">Register</a>
+        <a href="/account/login">Login</a>
+        {{/if}}
+    </div>
+</div>
