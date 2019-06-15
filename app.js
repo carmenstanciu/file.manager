@@ -41,7 +41,7 @@ app.use(session({
 app.set('views', path.join(__dirname, 'views'));
 app.engine('hbs', hbs({
   extname: 'hbs',
-  defaultLayout: 'main',
+  defaultLayout: null,
   layoutsDir: __dirname + '/views/layouts/',
   partialsDir: __dirname + '/views/partials/'
 }));

@@ -17,11 +17,11 @@ router.post('/register', async (req, res, next) => {
 
     let error;
     if (!email || !pass || !firstname || !lastname || !address || !phone)
-        error = 'toate campurile sunt obligatorii';
+        error = 'Tate campurile sunt obligatorii';
 
     let dbUser = await User.findOne({ email: email });
     if (dbUser)
-        error = 'adresa de email este deja folosita';
+        error = 'Adresa de email este deja folosita';
 
     if (error) {
         return res.render('account/register', {
@@ -61,12 +61,12 @@ router.post('/login', async (req, res, next) => {
 
     let dbUser = await User.findOne({ email: email });
     if (!dbUser)
-        error = 'utilizator sau parola incorecta';
+        error = 'Utilizator sau parola incorecta';
     else {
         let passCheck = bcrypt.compareSync(pass, dbUser.hash);
 
         if (!passCheck)
-            error = 'utilizator sau parola incorecta';
+            error = 'Utilizator sau parola incorecta';
     }
 
     if (error) {

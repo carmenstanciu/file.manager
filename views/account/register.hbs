@@ -1,46 +1,91 @@
-<form action="/account/register" method="POST" class="form-horizontal">
-    {{#if error}}
-    <p>{{error}}</p>
-    {{/if}}
-    <div class="form-group">
-        <label for="inputFirstname" class="col-sm-2 control-label">First Name</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputFirstname" placeholder="Firstname" name="firstname">
-        </div>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Manager</title>
+    <script defer src="/js/material.min.js"></script>
+    <link rel="stylesheet" href="/css/font.css">
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/icon.css">
+    <link rel="stylesheet" href="/css/material.deep_purple-pink.min.css">
+    <link rel='stylesheet' href='/css/main.css' />
+</head>
+
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+            <div class="mdl-layout__header-row">
+                <h3>File Manager</h3>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation. We hide it in small screens. -->
+                <nav class="mdl-navigation">
+                    {{#if isLoggedIn}}
+                    <a class="mdl-navigation__link" href="/user">Profil</a>
+                    <a class="mdl-navigation__link" href="/folder/list">My files</a>
+                    <a class="mdl-navigation__link" href="/account/logout">Logout</a>
+                    {{else}}
+                    <a class="mdl-navigation__link" href="/account/register">Register</a>
+                    <a class="mdl-navigation__link" href="/account/login">Login</a>
+                    {{/if}}
+                </nav>
+            </div>
+            <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+                <a href="/" class="mdl-layout__tab">Overview</a>
+            </div>
+        </header>
+        <main class="mdl-layout__content">
+            <div class="mdl-layout__tab-panel is-active login">
+                <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                    <div class="mdl-card mdl-cell mdl-cell--12-col">
+                        <div class="mdl-card__supporting-text">
+                            <h4>Register</h4>
+
+                            <p>Ne bucuram ca iti faci cont </p>
+                            <form action="/account/register" method="POST" class="form-horizontal">
+                                {{#if error}}
+                                <p>{{error}}</p>
+                                {{/if}}
+
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" name="firstname" id="firstname">
+                                    <label class="mdl-textfield__label" for="firstname">Prenume</label>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" name="lastname" id="lastname">
+                                    <label class="mdl-textfield__label" for="lastname">Nume</label>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" name="address" id="address">
+                                    <label class="mdl-textfield__label" for="address">Adresa</label>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" name="phone" id="phone">
+                                    <label class="mdl-textfield__label" for="phone">Telefon</label>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" name="email" id="email">
+                                    <label class="mdl-textfield__label" for="email">Utilizator</label>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="password" name="pass" id="pass">
+                                    <label class="mdl-textfield__label" for="pass">Parola</label>
+                                </div>
+
+
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                                    Inregistreaza-te
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            {{>footer}}
+        </main>
     </div>
-    <div class="form-group">
-        <label for="inputLastname" class="col-sm-2 control-label">Last Name</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputLastname" placeholder="Lastname" name="lastname">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="inputAddress" class="col-sm-2 control-label">Address</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputAdress" placeholder="Address" name="address">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="inputPhone" class="col-sm-2 control-label">Phone Number</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputPhone" placeholder="Phone" name="phone">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-        <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="email">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-        <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="pass">
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">Register</button>
-        </div>
-    </div>
-</form>
+</body>
+
+</html>
