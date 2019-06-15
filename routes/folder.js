@@ -64,11 +64,11 @@ router.post('/new/:root?', auth, async (req, res, next) => {
     let name = req.body.name;
     let error;
     if (!name)
-        error = 'numele este obligatoriu';
+        error = 'Numele este obligatoriu';
 
     let dbFolder = await Folder.findOne({ folder: rootid, name: name, user: req.session.userid, isDeleted: false });
     if (dbFolder)
-        error = 'exista deja un folder cu acelasi nume in cadrul folderului curent';
+        error = 'Exista deja un director cu acelasi nume in cadrul directorului curent';
 
     if (error)
         return res.render('folder/details', { layout: 'user', error, rootid });
@@ -101,7 +101,7 @@ router.post('/edit/:id', auth, async (req, res, next) => {
     let name = req.body.name;
     let error;
     if (!name)
-        error = 'numele este obligatoriu';
+        error = 'Numele este obligatoriu';
 
     let dbFolder = await Folder.findOne({ _id: id, user: req.session.userid });
     if (!dbFolder)
@@ -109,7 +109,7 @@ router.post('/edit/:id', auth, async (req, res, next) => {
 
     let dbSame = await Folder.findOne({ folder: dbFolder.folder, name: name, user: req.session.userid, isDeleted: false, _id: { $ne: id } });
     if (dbSame)
-        error = 'exista deja un folder cu acelasi nume in cadrul folderului curent';
+        error = 'Exista deja un director cu acelasi nume in cadrul directorului curent';
 
     if (error)
         return res.render('folder/details', { layout: 'user', error, folderid: id });

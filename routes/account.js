@@ -82,7 +82,7 @@ router.post('/login', async (req, res, next) => {
     req.session.email = email;
     req.session.userid = dbUser._id;
 
-    return res.redirect('/user');
+    return res.redirect('/folder/list');
 });
 
 router.get('/logout', (req, res, next) => {

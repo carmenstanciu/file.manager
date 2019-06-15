@@ -1,7 +1,46 @@
-<h1>My Profile</h1>
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+            <div class="mdl-layout__header-row">
+                <h3>File Manager</h3>
+                <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="/account/logout">Logout</a>
+                </nav>
+            </div>
+            <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+                <a class="mdl-layout__tab" href="/folder/list">Fisierele mele</a><br />
+                <a class="mdl-layout__tab is-active" href="/user">Profil</a><br />
+            </div>
+        </header>
+        <main class="mdl-layout__content">
+            <div class="mdl-layout__tab-panel is-active single">
+                <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                    <div class="mdl-card mdl-cell mdl-cell--12-col">
+                        <div class="mdl-card__supporting-text">
 
-First Name: {{user.firstname}} </br>
-Last Name: {{user.lastname}}</br>
-Address: {{user.address}} </br>
-Phone number: {{user.phone}} </br>
-Last login: {{user.lastLogin}}
+                            <ul class="demo-list-two mdl-list">
+                                <li class="mdl-list__item mdl-list__item--two-line">
+                                    <span class="mdl-list__item-primary-content">
+                                        <i class="material-icons mdl-list__item-avatar">person</i>
+                                        <span>{{user.firstname}} {{user.lastname}}</span>
+                                        <span class="mdl-list__item-sub-title">Membru de {{user.memberSince}}
+                                            zile</span>
+                                    </span>
+                                    <span class="mdl-list__item-secondary-content">
+                                        <span class="mdl-list__item-secondary-info">Membru</span>
+                                        <a class="mdl-list__item-secondary-action" href="#"><i
+                                                class="material-icons">star</i></a>
+                                    </span>
+                                </li>
+                            </ul>
+                                <p>Adresa: {{user.address}}</p>
+                                <p>Contact: {{user.phone}}</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            {{>footer}}
+        </main>
+    </div>
+</body>

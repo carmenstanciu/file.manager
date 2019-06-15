@@ -16,6 +16,7 @@ router.get('/', auth, async (req, res, next) => {
       lastname: dbUser.lastname,
       address: dbUser.address,
       phone: dbUser.phone,
+      memberSince: moment().diff(moment(dbUser.createdAt), 'days'),
       lastLogin: moment(dbUser.lastLogin).format('HH:mm DD.MM.YYYY')
     }
   });

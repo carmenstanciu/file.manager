@@ -41,12 +41,12 @@
                 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
                     <div class="mdl-card mdl-cell mdl-cell--12-col">
                         <div class="mdl-card__supporting-text">
-                            <h4>Register</h4>
+                            <h4 class="mdl-card__title-text">Register</h4>
 
                             <p>Ne bucuram ca iti faci cont </p>
                             <form action="/account/register" method="POST" class="form-horizontal">
                                 {{#if error}}
-                                <p>{{error}}</p>
+                                <p class="error">{{error}}</p>
                                 {{/if}}
 
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">

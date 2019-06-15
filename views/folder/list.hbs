@@ -1,42 +1,88 @@
-<h1>Lista de fisiere/foldere</h1>
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+            <div class="mdl-layout__header-row">
+                <h3>File Manager</h3>
+                <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="/account/logout">Logout</a>
+                </nav>
+            </div>
+            <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+                <a class="mdl-layout__tab is-active" href="/folder/list">Fisierele mele</a><br />
+                <a class="mdl-layout__tab" href="/user">Profil</a><br />
+            </div>
+        </header>
+        <main class="mdl-layout__content">
+            <div class="mdl-layout__tab-panel is-active single">
+                <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                    <div class="mdl-card mdl-cell mdl-cell--12-col">
+                        <div class="mdl-card__supporting-text">
+                            <h2 class="mdl-card__title-text">Lista de fisiere/foldere</h2>
 
-{{#if folderid}}
-{{#if parent}}
-<p>
-    <a href="/folder/list/{{parent._id}}">Back to {{parent.name}}</a>
-</p>
-{{else}}
-<p>
-    <a href="/folder/list">Back to root</a>
-</p>
-{{/if}}
-{{/if}}
+                            <p class="toolbar">
+                                {{#if folderid}}
+                                {{#if parent}}
+                                <a href="/folder/list/{{parent._id}}" id="back-up"
+                                    class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                                    <i class="material-icons">arrow_back</i>
+                                </a>
+                                {{else}}
+                                <a href="/folder/list" id="back-root"
+                                    class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                                    <i class="material-icons">arrow_back</i>
+                                </a>
+                                {{/if}}
+                                {{/if}}
 
-<p>
-    <a href="/folder/new/{{folderid}}">+ Folder</a>
-</p>
-<p>
-    <a href="/file/new/{{folderid}}">+ File</a>
-</p>
+                                <a href="/folder/new/{{folderid}}" id="newfolder"
+                                    class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+                                    <i class="material-icons">create_new_folder</i>
+                                </a>
+                                <a href="/file/new/{{folderid}}" id="newfile"
+                                    class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                                    <i class="material-icons">library_add</i>
+                                </a>
+                            </p>
+                            <div class="mdl-tooltip" data-mdl-for="back-up">
+                                Inapoii la {{parent.name}}
+                            </div>
+                            <div class="mdl-tooltip" data-mdl-for="back-root">
+                                Inapoi
+                            </div>
+                            <div class="mdl-tooltip" data-mdl-for="newfolder">
+                                Adauga un director nou
+                            </div>
+                            <div class="mdl-tooltip" data-mdl-for="newfile">
+                                Adauga un fisier nou
+                            </div>
 
 
+                            {{#if isEmpty}}
+                            <h3>Nu exista foldere sau fisiere</h3>
+                            {{else}}
+                            <h3>Lista de foldere si fisiere detinute de user</h3>
 
-{{#if isEmpty}}
-<h3>Nu exista foldere sau fisiere</h3>
-{{else}}
-<h3>Lista de foldere si fisiere detinute de user</h3>
-
-{{#each folders}}
-<div style="margin-bottom: 10px;"><a href="/folder/list/{{this._id}}">{{this.name}}</a><br />{{this.createdAt}}<br />
-    <a href="/folder/edit/{{this._id}}">Edit</a><br />
-    <a href="/folder/delete/{{this._id}}">Delete</a><br />
-</div>
-{{/each}}
-{{#each files}}
-<div>FISIER<br />
-<a href="{{this.url}}" target="_blank">{{this.name}}.{{this.ext}}</a>
-<br />{{this.createdAt}}</div><br />
-<a href="/file/edit/{{this._id}}">Edit</a><br />
-<a href="/file/delete/{{this._id}}">Delete</a><br />
-{{/each}}
-{{/if}}
+                            {{#each folders}}
+                            <div style="margin-bottom: 10px;"><a
+                                    href="/folder/list/{{this._id}}">{{this.name}}</a><br />{{this.createdAt}}<br />
+                                <a href="/folder/edit/{{this._id}}">Edit</a><br />
+                                <a href="/folder/delete/{{this._id}}">Delete</a><br />
+                            </div>
+                            {{/each}}
+                            {{#each files}}
+                            <div>FISIER<br />
+                                <a href="{{this.url}}" target="_blank">{{this.name}}.{{this.ext}}</a>
+                                <br />{{this.createdAt}}</div><br />
+                            <a href="/file/edit/{{this._id}}">Edit</a><br />
+                            <a href="/file/delete/{{this._id}}">Delete</a><br />
+                            {{/each}}
+                            {{/if}}
+                        </div>
+                    </div>
+                </section>
+            </div>
+            {{>footer}}
+        </main>
+    </div>
+</body>

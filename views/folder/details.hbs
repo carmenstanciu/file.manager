@@ -1,15 +1,56 @@
-{{#if name}}
-<h1>Edit Folder</h1>
-{{else}}
-<h1>New Folder</h1>
-{{/if}}
-
-{{#if error}}
-<p>{{error}}</p>
-{{/if}}
-<form action="" method="POST">
-    <p>Name: <input type="text" name="name" value={{name}}></input></p>
-    <button type="submit">Create</button>
-</form>
-
-<a href="/folder/list/{{rootid}}">Cancel</a>
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+            <div class="mdl-layout__header-row">
+                <h3>File Manager</h3>
+                <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="/account/logout">Logout</a>
+                </nav>
+            </div>
+            <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+                <a class="mdl-layout__tab is-active" href="/folder/list">Fisierele mele</a><br />
+                <a class="mdl-layout__tab" href="/user">Profil</a><br />
+            </div>
+        </header>
+        <main class="mdl-layout__content">
+            <div class="mdl-layout__tab-panel is-active login">
+                <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                    <div class="mdl-card mdl-cell mdl-cell--12-col">
+                        <form action="" method="POST">
+                            <div class="mdl-card__supporting-text">
+                                {{#if name}}
+                                <h4 class="mdl-card__title-text">Modifica Director</h4>
+                                {{else}}
+                                <h4 class="mdl-card__title-text">Director Nou</h4>
+                                {{/if}}
+                                <p>Lorem ipsum ceva</p>
+                                {{#if error}}
+                                <p class="error">{{error}}</p>
+                                {{/if}}
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" name="name" id="name" value="{{name}}">
+                                    <label class="mdl-textfield__label" for="name">Denumire</label>
+                                </div>
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border">
+                                {{#if name}}
+                                <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                    Modifica
+                                </button>
+                                {{else}}
+                                <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                    Creaza
+                                </button>
+                                {{/if}}
+                                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect right"
+                                    href="/folder/list/{{rootid}}">Anuleaza</a>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+            {{>footer}}
+        </main>
+    </div>
+</body>
