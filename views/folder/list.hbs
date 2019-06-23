@@ -2,15 +2,15 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
             <div class="mdl-layout__header-row">
-                <h3>File Manager</h3>
+                <h3>Managementul documentelor</h3>
                 <div class="mdl-layout-spacer"></div>
                 <nav class="mdl-navigation">
-                    <a class="mdl-navigation__link" href="/account/logout">Logout</a>
+                    <a class="mdl-navigation__link" href="/account/logout">Ieșire din cont</a>
                 </nav>
             </div>
             <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-                <a class="mdl-layout__tab is-active" href="/folder/list">Fisierele mele</a><br />
-                <a class="mdl-layout__tab" href="/user">Profil</a><br />
+                <a class="mdl-layout__tab is-active" href="/folder/list">Documentele mele</a><br />
+                <a class="mdl-layout__tab" href="/user">Pagina personală</a><br />
             </div>
         </header>
         <main class="mdl-layout__content">
@@ -18,7 +18,7 @@
                 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" style="max-width:925px;">
                     <div class="mdl-card mdl-cell mdl-cell--12-col">
                         <div class="mdl-card__supporting-text">
-                            <h2 class="mdl-card__title-text">Lista de fisiere/foldere</h2>
+                            <h2 class="mdl-card__title-text">Lista fișierelor / directoarelor mele</h2>
 
                             <p class="toolbar">
                                 {{#if folderid}}
@@ -45,21 +45,21 @@
                                 </a>
                             </p>
                             <div class="mdl-tooltip" data-mdl-for="back-up">
-                                Inapoii la {{parent.name}}
+                                Înapoi la {{parent.name}}
                             </div>
                             <div class="mdl-tooltip" data-mdl-for="back-root">
-                                Inapoi
+                                Înapoi
                             </div>
                             <div class="mdl-tooltip" data-mdl-for="newfolder">
-                                Adauga un director nou
+                                Adaugă un director nou
                             </div>
                             <div class="mdl-tooltip" data-mdl-for="newfile">
-                                Adauga un fisier nou
+                                Adaugă un fișier nou
                             </div>
 
                             {{#if isEmpty}}
                             <h6>
-                                Nu exista foldere sau fisiere
+                                Nu există fișiere sau directoare.
                                 <div class="material-icons mdl-badge mdl-badge--overlap" data-badge="0">folder
                                 </div>
                             </h6>
@@ -89,13 +89,13 @@
                                 </div>
                             </div>
                             <div class="mdl-tooltip" data-mdl-for="edit_{{this._id}}">
-                                Modifica directorul
+                                Modifică directorul
                             </div>
                             <div class="mdl-tooltip" data-mdl-for="delete_{{this._id}}">
-                                Sterge directorul
+                                Șterge directorul
                             </div>
                             <div class="mdl-tooltip" data-mdl-for="view_{{this._id}}">
-                                Vezi continutul
+                                Vezi conținutul
                             </div>
                             <div class="mdl-tooltip" data-mdl-for="{{this._id}}">
                                 Creat la: {{this.createdAt}}
@@ -125,13 +125,13 @@
                                 </div>
                             </div>
                             <div class="mdl-tooltip" data-mdl-for="edit_{{this._id}}">
-                                Modifica fisierul
+                                Modifică fișierul
                             </div>
                             <div class="mdl-tooltip" data-mdl-for="delete_{{this._id}}">
-                                Sterge fisierul
+                                Șterge fișierul
                             </div>
                             <div class="mdl-tooltip" data-mdl-for="view_{{this._id}}">
-                                Vezi continutul
+                                Vezi conținutul
                             </div>
                             <div class="mdl-tooltip" data-mdl-for="{{this._id}}">
                                 Creat la: {{this.createdAt}}

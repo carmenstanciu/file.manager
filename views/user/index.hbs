@@ -2,15 +2,15 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
             <div class="mdl-layout__header-row">
-                <h3>File Manager</h3>
+                <h3>Managementul documentelor</h3>
                 <div class="mdl-layout-spacer"></div>
                 <nav class="mdl-navigation">
-                    <a class="mdl-navigation__link" href="/account/logout">Logout</a>
+                    <a class="mdl-navigation__link" href="/account/logout">Ieșire din cont</a>
                 </nav>
             </div>
             <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-                <a class="mdl-layout__tab" href="/folder/list">Fisierele mele</a><br />
-                <a class="mdl-layout__tab is-active" href="/user">Profil</a><br />
+                <a class="mdl-layout__tab" href="/folder/list">Documentele mele</a><br />
+                <a class="mdl-layout__tab is-active" href="/user">Pagina personală</a><br />
             </div>
         </header>
         <main class="mdl-layout__content">
@@ -34,8 +34,8 @@
                                     </span>
                                 </li>
                             </ul>
-                                <p>Adresa: {{user.address}}</p>
-                                <p>Contact: {{user.phone}}</p>
+                                <p>Adresă: {{user.address}}</p>
+                                <p>Telefon: {{user.phone}}</p>
                         </div>
                     </div>
                 </section>

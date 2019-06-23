@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>File Manager</title>
+  <title>Managementul documentelor</title>
   <script defer src="/js/material.min.js"></script>
   <link rel="stylesheet" href="/css/font.css">
   <link rel="stylesheet" href="/css/material.min.css">
@@ -17,25 +17,25 @@
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
       <div class="mdl-layout__header-row">
-        <h3>File Manager</h3>
+        <h3>Managementul documentelor</h3>
         <!-- Add spacer, to align navigation to the right -->
         <div class="mdl-layout-spacer"></div>
         <!-- Navigation. We hide it in small screens. -->
         <nav class="mdl-navigation">
           {{#if isLoggedIn}}
-          <a class="mdl-navigation__link" href="/user">Profil</a>
-          <a class="mdl-navigation__link" href="/folder/list">My files</a>
-          <a class="mdl-navigation__link" href="/account/logout">Logout</a>
+          <a class="mdl-navigation__link" href="/user">Pagina personală</a>
+          <a class="mdl-navigation__link" href="/folder/list">Documentele mele</a>
+          <a class="mdl-navigation__link" href="/account/logout">Iesșire din cont</a>
           {{else}}
-          <a class="mdl-navigation__link" href="/account/register">Register</a>
-          <a class="mdl-navigation__link" href="/account/login">Login</a>
+          <a class="mdl-navigation__link" href="/account/register">Cont nou</a>
+          <a class="mdl-navigation__link" href="/account/login">Accesare cont</a>
           {{/if}}
         </nav>
       </div>
       <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-        <a href="#overview" class="mdl-layout__tab is-active">Overview</a>
-        <a href="#features" class="mdl-layout__tab">Features</a>
-        <a href="#pricing" class="mdl-layout__tab">Pricing</a>
+        <a href="#overview" class="mdl-layout__tab is-active">Acasă</a>
+        <a href="#features" class="mdl-layout__tab">Beneficii</a>
+        <a href="#pricing" class="mdl-layout__tab">Prețuri</a>
       </div>
     </header>
     <main class="mdl-layout__content">
@@ -43,199 +43,130 @@
         <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
           <header
             class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
-            <i class="material-icons">play_circle_filled</i>
           </header>
           <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
             <div class="mdl-card__supporting-text">
-              <h4>Features</h4>
-              Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi
-              amet do dolor eu fugiat consectetur elit cillum esse.
+              <h4>Despre noi</h4>
+              Ai grijă de documentele tale și organizează-le folosind aplicația noastră. Vei petrece mai puțin timp căutând documentele mai vechi și te vei bucura de beneficiile oferite gratuit de noi.
             </div>
             <div class="mdl-card__actions">
-              <a href="#" class="mdl-button">Read our features</a>
+              <a href="/account/register" class="mdl-button">Crează cont</a>
             </div>
           </div>
           <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1">
             <i class="material-icons">more_vert</i>
           </button>
           <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1">
-            <li class="mdl-menu__item">Lorem</li>
-            <li class="mdl-menu__item" disabled>Ipsum</li>
-            <li class="mdl-menu__item">Dolor</li>
+            <li class="mdl-menu__item"><a href="/account/login">Accesare cont</a></li>
+            <li class="mdl-menu__item"><a href="/account/register">Crează cont</a></li>
           </ul>
         </section>
         <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
           <div class="mdl-card mdl-cell mdl-cell--12-col">
             <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
-              <h4 class="mdl-cell mdl-cell--12-col">Details</h4>
+              <h4 class="mdl-cell mdl-cell--12-col">Detalii</h4>
               <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
                 <div class="section__circle-container__circle mdl-color--primary"></div>
               </div>
               <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                <h5>Lorem ipsum dolor sit amet</h5>
-                Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Duis nulla tempor do aute et
-                eiusmod velit exercitation nostrud quis <a href="#">proident minim</a>.
-              </div>
-              <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-                <div class="section__circle-container__circle mdl-color--primary"></div>
-              </div>
-              <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                <h5>Lorem ipsum dolor sit amet</h5>
-                Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Duis nulla tempor do aute et
-                eiusmod velit exercitation nostrud quis <a href="#">proident minim</a>.
+                <h5>Securitate</h5>
+                Aplicația noastră îți va oferi un nivel de securitate de cel mai înalt nivel. Documentele și datele tale personale vor fi în siguranță și vor putea fi accesate doar de către tine.
               </div>
               <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
                 <div class="section__circle-container__circle mdl-color--primary"></div>
               </div>
               <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                <h5>Lorem ipsum dolor sit amet</h5>
-                Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Duis nulla tempor do aute et
-                eiusmod velit exercitation nostrud quis <a href="#">proident minim</a>.
+                <h5>Organizare</h5>
+                Aplicația noastră vă permite salvarea documentelor dumneavoastră într-o structură ierarhică de directoare putând astfel să vă gestionați fișierele personale pe domenii de lucru sau în funcție de alte criterii.
+              </div>
+              <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                <div class="section__circle-container__circle mdl-color--primary"></div>
+              </div>
+              <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                <h5>Stocare</h5>
+                Aplicația noastră vă permite administrarea și organizarea a unui numar mare de documente, având un spațiu de stocare de 5GB fără costuri.
               </div>
             </div>
             <div class="mdl-card__actions">
-              <a href="#" class="mdl-button">Read our features</a>
+              <a href="#" class="mdl-button">Mai multe despre beneficiile oferite</a>
             </div>
           </div>
           <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn2">
             <i class="material-icons">more_vert</i>
           </button>
           <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn2">
-            <li class="mdl-menu__item">Lorem</li>
-            <li class="mdl-menu__item" disabled>Ipsum</li>
-            <li class="mdl-menu__item">Dolor</li>
+            <li class="mdl-menu__item">Contact</li>
+            <li class="mdl-menu__item">Termeni și condiții</li>
           </ul>
         </section>
         <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
           <div class="mdl-card mdl-cell mdl-cell--12-col">
             <div class="mdl-card__supporting-text">
-              <h4>Technology</h4>
-              Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi
-              amet do dolor eu fugiat consectetur elit cillum esse. Pariatur occaecat nisi laboris tempor laboris
-              eiusmod qui id Lorem esse commodo in. Exercitation aute dolore deserunt culpa consequat elit labore
-              incididunt elit anim.
+              <h4>Technologie</h4>
+              Tehnologia pe care o folosim îți oferă un nivel de securitate ridicat și este conformă cu cele mai înalte standarde din industrie.
             </div>
             <div class="mdl-card__actions">
-              <a href="#" class="mdl-button">Read our features</a>
+              <a href="/account/register" class="mdl-button">Încearcă gratuit</a>
             </div>
           </div>
-          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
-            <i class="material-icons">more_vert</i>
-          </button>
-          <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3">
-            <li class="mdl-menu__item">Lorem</li>
-            <li class="mdl-menu__item" disabled>Ipsum</li>
-            <li class="mdl-menu__item">Dolor</li>
-          </ul>
         </section>
         <section class="section--footer mdl-color--white mdl-grid">
           <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
             <div class="section__circle-container__circle mdl-color--accent section__circle--big"></div>
           </div>
           <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-            <h5>Lorem ipsum dolor sit amet</h5>
-            Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
+            <h5>Încarcă documente</h5>
+            Poți încărca documente ușor și în siguranță. Nimeni nu va avea acces la documentele tale fără permisiune. Administrează-ți documentele cu încredere.
           </div>
           <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
             <div class="section__circle-container__circle mdl-color--accent section__circle--big"></div>
           </div>
           <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-            <h5>Lorem ipsum dolor sit amet</h5>
-            Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
+            <h5>Crează directoare ușor</h5>
+            Îți poți organiza documentele printr-o structură de directoare ierarhice. Tot ce trebuie să faci este să îți creezi cont.
           </div>
         </section>
       </div>
       <div class="mdl-layout__tab-panel" id="features">
         <section class="section--center mdl-grid mdl-grid--no-spacing">
           <div class="mdl-cell mdl-cell--12-col">
-            <h4>Features</h4>
-            Minim duis incididunt est cillum est ex occaecat consectetur. Qui sint ut et qui nisi cupidatat.
-            Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
+            <h4>Beneficii</h4>
+            Bucură-te de beneficiile gratuite pe care ți le punem la dispoziție și organizează-ți documentele.
             <ul class="toc">
-              <h4>Contents</h4>
-              <a href="#lorem1">Lorem ipsum</a>
-              <a href="#lorem2">Lorem ipsum</a>
-              <a href="#lorem3">Lorem ipsum</a>
-              <a href="#lorem4">Lorem ipsum</a>
-              <a href="#lorem5">Lorem ipsum</a>
+              <h4>Cum funcționează?</h4>
+              <a href="#lorem1">Crează-ți un cont de utilizator</a>
+              <a href="#lorem2">Crează directoare</a>
+              <a href="#lorem3">Încarcă fișiere</a>
             </ul>
 
-            <h5 id="lorem1">Lorem ipsum dolor sit amet</h5>
-            Excepteur et pariatur officia veniam anim culpa cupidatat consequat ad velit culpa est non.
+            <h5 id="lorem1">Crează-ți un cont</h5>
+            Pentru a putea beneficia de toate caracteristicile aplicației noastre este necesar să te inregistrezi ca utilizator.
             <ul>
-              <li>Nisi qui nisi duis commodo duis reprehenderit consequat velit aliquip.</li>
-              <li>Dolor consectetur incididunt in ipsum laborum non et irure pariatur excepteur anim occaecat officia
-                sint.</li>
-              <li>Lorem labore proident officia excepteur do.</li>
+              <li>Îți poți face un cont accezând acest <a href="/account/register">link</a></li>
+              <li>Completează-ți datele corespunzător</li>
+              <li>Apasă butonul <i>Crează cont</i></li>
             </ul>
 
             <p>
-              Sit qui est voluptate proident minim cillum in aliquip cupidatat labore pariatur id tempor id. Proident
-              occaecat occaecat sint mollit tempor duis dolor cillum anim. Dolore sunt ea mollit fugiat in aliqua
-              consequat nostrud aliqua ut irure in dolore. Proident aliqua culpa sint sint exercitation. Non proident
-              occaecat reprehenderit veniam et proident dolor id culpa ea tempor do dolor. Nulla adipisicing qui fugiat
-              id dolor. Nostrud magna voluptate irure veniam veniam labore ipsum deserunt adipisicing laboris amet eu
-              irure. Sunt dolore nisi velit sit id. Nostrud voluptate labore proident cupidatat enim amet Lorem officia
-              magna excepteur occaecat eu qui. Exercitation culpa deserunt non et tempor et non.
-            </p>
-            <p>
-              Do dolor eiusmod eu mollit dolore nostrud deserunt cillum irure esse sint irure fugiat exercitation. Magna
-              sit voluptate id in tempor elit veniam enim cupidatat ea labore elit. Aliqua pariatur eu nulla labore
-              magna dolore mollit occaecat sint commodo culpa. Eu non minim duis pariatur Lorem quis exercitation. Sunt
-              qui ex incididunt sit anim incididunt sit elit ad officia id.
-            </p>
-            <p id="lorem2">
-              Tempor voluptate ex consequat fugiat aliqua. Do sit et reprehenderit culpa deserunt culpa. Excepteur quis
-              minim mollit irure nulla excepteur enim quis in laborum. Aliqua elit voluptate ad deserunt nulla
-              reprehenderit adipisicing sint. Est in eiusmod exercitation esse commodo. Ea reprehenderit exercitation
-              veniam adipisicing minim nostrud. Veniam dolore ex ea occaecat non enim minim id ut aliqua adipisicing ad.
-              Occaecat excepteur aliqua tempor cupidatat aute dolore deserunt ipsum qui incididunt aliqua occaecat sit
-              quis. Culpa sint aliqua aliqua reprehenderit veniam irure fugiat ea ad.
-            </p>
-            <p>
-              Eu minim fugiat laborum irure veniam Lorem aliqua enim. Aliqua veniam incididunt consequat irure consequat
-              tempor do nisi deserunt. Elit dolore ad quis consectetur sint laborum anim magna do nostrud amet. Ea nulla
-              sit consequat quis qui irure dolor. Sint deserunt excepteur consectetur magna irure. Dolor tempor
-              exercitation dolore pariatur incididunt ut laboris fugiat ipsum sunt veniam aute sunt labore. Non dolore
-              sit nostrud eu ad excepteur cillum eu ex Lorem duis.
-            </p>
-            <p>
-              Id occaecat velit non ipsum occaecat aliqua quis ut. Eiusmod est magna non esse est ex incididunt aute
-              ullamco. Cillum excepteur sint ipsum qui quis velit incididunt amet. Qui deserunt anim enim laborum cillum
-              reprehenderit duis mollit amet ad officia enim. Minim sint et quis aliqua aliqua do minim officia dolor
-              deserunt ipsum laboris. Nulla nisi voluptate consectetur est voluptate et amet. Occaecat ut quis
-              adipisicing ad enim. Magna est magna sit duis proident veniam reprehenderit fugiat reprehenderit enim
-              velit ex. Ullamco laboris culpa irure aliquip ad Lorem consequat veniam ad ipsum eu. Ipsum culpa dolore
-              sunt officia laborum quis.
+              Datele tale personale nu vor fi folosite în scop de marketing fără acordul tău prealabil. 
+              Ele nu vor fi văndute către terțe părți și vor fi sercurizate prin cele mai actuale și eficiente metode tehnologice.
+              
+              Pentru mai mulde detalii te rugăm să ne contactezi sau să accesezi secțiunea de <i>Termeni și condiții</i>
             </p>
 
-            <h5 id="lorem3">Lorem ipsum dolor sit amet</h5>
+            <h5 id="lorem2">Crează directoare</h5>
+            <p id="lorem2">
+              Poți crea un director foarte ușor accesând secțiunea <i>Documentele mele</i> din <i>Contul tău</i>.
+              Poți crea o structură ierarhică de directoare pentru a-ți administra mai bine documentele.
+              Fiecare director poate avea la rândul lui încorporate alte directoare putând astfel gestiona documentele în funcție de orice criteriu ai nevoie.
+            </p>
+            
+            <h5 id="lorem3">Încarcă fișiere</h5>
 
             <p id="lorem4">
-              Eiusmod nulla aliquip ipsum reprehenderit nostrud non excepteur mollit amet esse est est dolor. Dolore
-              quis pariatur sit consectetur veniam esse ullamco duis Lorem qui enim ut veniam. Officia deserunt minim
-              duis laborum dolor in velit pariatur commodo ullamco eu. Aute adipisicing ad duis labore laboris do mollit
-              dolor cillum sunt aliqua ullamco. Esse tempor quis cillum consequat reprehenderit. Adipisicing proident
-              anim eu sint elit aliqua anim dolore cupidatat fugiat aliquip qui.
-            </p>
-            <p id="lorem5">
-              Nisi eiusmod esse cupidatat excepteur exercitation ipsum reprehenderit nostrud deserunt aliqua ullamco.
-              Anim est irure commodo eiusmod pariatur officia. Est dolor ipsum excepteur magna aliqua ad veniam irure
-              qui occaecat eiusmod aute fugiat commodo. Quis mollit incididunt amet sit minim velit eu fugiat voluptate
-              excepteur. Sit minim id pariatur ex cupidatat cupidatat nostrud nostrud ipsum.
-            </p>
-            <p>
-              Enim ea officia excepteur ad veniam id reprehenderit eiusmod esse mollit consequat. Esse non aute ullamco
-              Lorem aliqua qui dolore irure eiusmod aute aliqua proident labore aliqua. Ipsum voluptate voluptate
-              exercitation laborum deserunt nulla elit aliquip et minim ex veniam. Duis cupidatat aute sunt officia
-              mollit dolor ad elit ad aute labore nostrud duis pariatur. In est sint voluptate consectetur velit ea non
-              labore. Ut duis ea aliqua consequat nulla laboris fugiat aute id culpa proident. Minim eiusmod laboris
-              enim Lorem nisi excepteur mollit voluptate enim labore reprehenderit officia mollit.
-            </p>
-            <p>
-              Cupidatat labore nisi ut sunt voluptate quis sunt qui ad Lorem esse nisi. Ex esse velit ullamco incididunt
-              occaecat dolore veniam tempor minim adipisicing amet. Consequat in exercitation est elit anim consequat
-              cillum sint labore cillum. Aliquip mollit laboris ad labore anim.
+              Adăugarea unui document se face prin încărcare (upload) directă de pe calculatorul tău.
+              Pot fi încărcate o multitudine de tipuri de fișiere (.pdf, .png, .jpeg, .xlms etc.) în limita a 50 MB un fișier.
+              Îți poti organiza fișierele în directoarele create sau direct în secțiunea <i>Documentele mele</i>
             </p>
           </div>
         </section>
@@ -248,101 +179,59 @@
           </header>
           <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
             <div class="mdl-card__supporting-text">
-              <h4>Features</h4>
-              Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi
-              amet do dolor eu fugiat consectetur elit cillum esse.
+              <h4>Prețuri</h4>
+              Servicul vă este oferit gratuit în limita a 5GB de documente stocate. Pentru a putea stoca un volum mai mare documente
+              și a avea acees la alte beneficii lista de prețuri este inclusă mai jos. Poti beneficia de o luna gratuită fără costuri suplimentare.
             </div>
             <div class="mdl-card__actions">
-              <a href="#" class="mdl-button">Read our features</a>
+              <a href="#" class="mdl-button">Mai multe detalii</a>
             </div>
           </div>
-          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1">
-            <i class="material-icons">more_vert</i>
-          </button>
-          <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1">
-            <li class="mdl-menu__item">Lorem</li>
-            <li class="mdl-menu__item" disabled>Ipsum</li>
-            <li class="mdl-menu__item">Dolor</li>
-          </ul>
         </section>
         <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
           <div class="mdl-card mdl-cell mdl-cell--12-col">
             <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
-              <h4 class="mdl-cell mdl-cell--12-col">Details</h4>
+              <h4 class="mdl-cell mdl-cell--12-col">Detalii</h4>
               <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
                 <div class="section__circle-container__circle mdl-color--primary"></div>
               </div>
               <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                <h5>Lorem ipsum dolor sit amet</h5>
-                Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Duis nulla tempor do aute et
-                eiusmod velit exercitation nostrud quis <a href="#">proident minim</a>.
-              </div>
-              <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-                <div class="section__circle-container__circle mdl-color--primary"></div>
-              </div>
-              <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                <h5>Lorem ipsum dolor sit amet</h5>
-                Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Duis nulla tempor do aute et
-                eiusmod velit exercitation nostrud quis <a href="#">proident minim</a>.
+                <h4>GRATUIT - 5 GB</h4>
+                Puteți beneficia de un spațiu de stocare de pană la 5GB pentru a vă putea organiza documentele 
+                personale într-un mod eficient și ușor.
               </div>
               <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
                 <div class="section__circle-container__circle mdl-color--primary"></div>
               </div>
               <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                <h5>Lorem ipsum dolor sit amet</h5>
-                Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Duis nulla tempor do aute et
-                eiusmod velit exercitation nostrud quis <a href="#">proident minim</a>.
+                <h4>5 &#8364 / lună - 50 GB</h4>
+                Pentru cei care au nevoie de mai mult spațiu de stocare vă punem la dispoziție 50 GB pentru 5 &#8364 / lună. 
+                Primele 2 luni sunt gratuite pentru a vă putea decide dăcă acest stațiu de stocare se adaptează nevoilor dumneavoastră.
+              </div>
+              <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                <div class="section__circle-container__circle mdl-color--primary"></div>
+              </div>
+              <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                <h4>7 &#8364 / lună - 100 GB</h4>
+                Puteți peneficia de pachetul nostru de 100 GB / lună pentru doar 7 &#8364 lunar dăca nevoile dumneavoastră 
+                de stocare sunt mai mari. Beneficiile vor fi gratuite pentru peimele 3 luni. 
               </div>
             </div>
             <div class="mdl-card__actions">
-              <a href="#" class="mdl-button">Read our features</a>
+              <a href="#" class="mdl-button">Termeni și condiții</a>
             </div>
           </div>
-          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn2">
-            <i class="material-icons">more_vert</i>
-          </button>
-          <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn2">
-            <li class="mdl-menu__item">Lorem</li>
-            <li class="mdl-menu__item" disabled>Ipsum</li>
-            <li class="mdl-menu__item">Dolor</li>
-          </ul>
         </section>
         <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
           <div class="mdl-card mdl-cell mdl-cell--12-col">
             <div class="mdl-card__supporting-text">
-              <h4>Technology</h4>
-              Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi
-              amet do dolor eu fugiat consectetur elit cillum esse. Pariatur occaecat nisi laboris tempor laboris
-              eiusmod qui id Lorem esse commodo in. Exercitation aute dolore deserunt culpa consequat elit labore
-              incididunt elit anim.
+              <h4>Condiții de utilizare</h4>
+              Abonamentul poate fi închis în orice moment, 
+              având posibilitatea sa accesați documentele deja încărcate pentru o perioadă pe 12 luni, fără a mai putea încărca altele noi.
             </div>
             <div class="mdl-card__actions">
-              <a href="#" class="mdl-button">Read our features</a>
+              <a href="#" class="mdl-button">Mai mult despre condițiile de utilizare</a>
             </div>
-          </div>
-          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
-            <i class="material-icons">more_vert</i>
-          </button>
-          <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3">
-            <li class="mdl-menu__item">Lorem</li>
-            <li class="mdl-menu__item" disabled>Ipsum</li>
-            <li class="mdl-menu__item">Dolor</li>
-          </ul>
-        </section>
-        <section class="section--footer mdl-color--white mdl-grid">
-          <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-            <div class="section__circle-container__circle mdl-color--accent section__circle--big"></div>
-          </div>
-          <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-            <h5>Lorem ipsum dolor sit amet</h5>
-            Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
-          </div>
-          <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-            <div class="section__circle-container__circle mdl-color--accent section__circle--big"></div>
-          </div>
-          <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-            <h5>Lorem ipsum dolor sit amet</h5>
-            Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
           </div>
         </section>
       </div>
